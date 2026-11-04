@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  engine:
+    name: Python engine
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: Engine/pyproject.toml
+      - name: Install engine and test tools
+        run: python -m pip install -e "Engine[dev,scout]"
+      - name: Public engine tests
+        run: pytest -q Engine/avril
+      - name: Static checks
+        run: ruff check Engine/avril Engine/vlora Engine/desktop_bridge.py
+
+  macos:
+    name: Native macOS workstation
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Swift build
+        run: swift build -c release
+      - name: Assemble source-build app
+        env:
+          AVRIL_NOVA_SKIP_RUNTIME: "1"
+        run: ./scripts/build_app.sh

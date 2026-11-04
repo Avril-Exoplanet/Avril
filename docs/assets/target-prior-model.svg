@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980" role="img" aria-labelledby="title desc">
+  <title id="title">Avril target-prior model</title>
+  <desc id="desc">Paper-style diagram showing a frozen Kepler DR25 snapshot, leakage-safe features, three target-prior views, star-level cross-validation, TESS opportunity routing, enrichment results, and discovery lanes.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#20252a"/></marker>
+    <style>
+      .ink{fill:#20252a}.muted{fill:#657078}.title{font:500 34px 'Helvetica Neue',Arial,sans-serif}.kicker{font:600 12px 'Helvetica Neue',Arial,sans-serif;letter-spacing:2px}.section{font:500 24px Georgia,'Times New Roman',serif}.h{font:600 14px 'Helvetica Neue',Arial,sans-serif}.label{font:500 12px 'Helvetica Neue',Arial,sans-serif}.small{font:400 10.5px 'Helvetica Neue',Arial,sans-serif}.mono{font:500 10px 'SFMono-Regular',Menlo,monospace}.box{stroke:#242a2e;stroke-width:1.35;rx:9}.flow{fill:none;stroke:#20252a;stroke-width:1.55;marker-end:url(#arrow)}.dash{fill:none;stroke:#41484d;stroke-width:1.2;stroke-dasharray:8 6}.grid{stroke:#d9dee1;stroke-width:.8}.axis{stroke:#586168;stroke-width:1}.blue{fill:none;stroke:#2176ae;stroke-width:2.4}.green{fill:none;stroke:#2f8f63;stroke-width:2.4}.red{fill:none;stroke:#c83243;stroke-width:2.4}
+    </style>
+  </defs>
+  <rect width="1600" height="980" fill="#fff"/>
+  <text x="48" y="48" class="title ink">Target-prior model</text>
+  <text x="49" y="72" class="kicker muted">RANK SEARCH OPPORTUNITY BEFORE ANY TESS LIGHT CURVE IS OPENED</text>
+  <text x="1552" y="52" text-anchor="end" class="mono muted">FROZEN 2026-10-29 · KEPLER DR25 → TESS</text>
+  <text x="48" y="116" class="section muted">Leakage-controlled training and deployment</text>
+  <line x1="48" y1="128" x2="1552" y2="128" stroke="#bfc6ca"/>
+
+  <!-- snapshot -->
+  <rect x="48" y="158" width="242" height="334" fill="#fbfcfc" stroke="#7f898f" stroke-width="1.3" rx="12"/>
+  <text x="66" y="186" class="kicker" fill="#326a86">A · FROZEN SNAPSHOT</text>
+  <text x="67" y="217" class="h ink">Kepler Q1–Q17 DR25</text>
+  <rect x="67" y="238" width="204" height="130" fill="#fff" stroke="#9aa2a7"/>
+  <rect x="67" y="238" width="204" height="26" fill="#e3edf7" stroke="#9aa2a7"/>
+  <g class="mono muted"><text x="76" y="256">kepid</text><text x="137" y="256">teff</text><text x="184" y="256">logg</text><text x="229" y="256">feh</text></g>
+  <g class="mono ink"><text x="76" y="284">100001</text><text x="137" y="284">5780</text><text x="184" y="284">4.41</text><text x="229" y="284">−.03</text><text x="76" y="310">100002</text><text x="137" y="310">4912</text><text x="184" y="310">4.58</text><text x="229" y="310">+.12</text><text x="76" y="336">100003</text><text x="137" y="336">6124</text><text x="184" y="336">4.21</text><text x="229" y="336">−.18</text></g>
+  <line x1="67" y1="290" x2="271" y2="290" class="grid"/><line x1="67" y1="316" x2="271" y2="316" class="grid"/><line x1="67" y1="342" x2="271" y2="342" class="grid"/>
+  <text x="67" y="401" class="mono muted">200,038 STELLAR ROWS</text><text x="67" y="421" class="mono muted">102,209 ELIGIBLE</text><text x="67" y="441" class="mono muted">8,054 KOI ROWS</text>
+  <rect x="67" y="456" width="204" height="23" fill="#f1dce4" stroke="#c83243" stroke-width="1" rx="4"/>
+  <text x="169" y="472" text-anchor="middle" class="small" fill="#9a2634">artifact hashes recorded</text>
+
+  <path class="flow" d="M290 324 H326"/>
+
+  <!-- label safe features -->
+  <rect x="326" y="158" width="272" height="334" fill="#fbfcfc" stroke="#7f898f" stroke-width="1.3" rx="12"/>
+  <text x="344" y="186" class="kicker" fill="#326a86">B · LABEL-SAFE FEATURES</text>
+  <text x="345" y="217" class="h ink">Six stellar-state inputs</text>
+  <g class="label ink">
+    <rect x="346" y="239" width="106" height="42" fill="#e3edf7" class="box"/><text x="399" y="264" text-anchor="middle">T<tspan baseline-shift="sub" font-size="9">eff</tspan></text>
+    <rect x="470" y="239" width="106" height="42" fill="#e3edf7" class="box"/><text x="523" y="264" text-anchor="middle">log g</text>
+    <rect x="346" y="295" width="106" height="42" fill="#e3edf7" class="box"/><text x="399" y="320" text-anchor="middle">[Fe/H]</text>
+    <rect x="470" y="295" width="106" height="42" fill="#e3edf7" class="box"/><text x="523" y="320" text-anchor="middle">M<tspan baseline-shift="sub" font-size="9">★</tspan></text>
+    <rect x="346" y="351" width="106" height="42" fill="#e3edf7" class="box"/><text x="399" y="376" text-anchor="middle">R<tspan baseline-shift="sub" font-size="9">★</tspan></text>
+    <rect x="470" y="351" width="106" height="42" fill="#e3edf7" class="box"/><text x="523" y="376" text-anchor="middle">J − K</text>
+  </g>
+  <text x="345" y="424" class="h" fill="#9a2634">Explicitly excluded</text>
+  <text x="345" y="446" class="small muted">KOI / TCE / known planet counts</text><text x="345" y="464" class="small muted">brightness · noise · observing baseline</text><text x="345" y="480" class="small muted">all TESS light-curve evidence</text>
+
+  <path class="flow" d="M598 324 H634"/>
+
+  <!-- model views -->
+  <rect x="634" y="158" width="318" height="334" fill="#fbfcfc" stroke="#7f898f" stroke-width="1.3" rx="12"/>
+  <text x="652" y="186" class="kicker" fill="#326a86">C · THREE FROZEN VIEWS</text>
+  <rect x="663" y="225" width="260" height="65" fill="#dceccf" class="box"/><text x="793" y="250" text-anchor="middle" class="h ink">Ordinal catalog-yield prior</text><text x="793" y="271" text-anchor="middle" class="small muted">default lower-bound profile</text>
+  <rect x="663" y="309" width="260" height="65" fill="#f5e4a7" class="box"/><text x="793" y="334" text-anchor="middle" class="h ink">Confirmed-clean prior</text><text x="793" y="355" text-anchor="middle" class="small muted">conservative archive profile</text>
+  <rect x="663" y="393" width="260" height="65" fill="#f6d0b8" class="box"/><text x="793" y="418" text-anchor="middle" class="h ink">Occurrence-grid reference</text><text x="793" y="439" text-anchor="middle" class="small muted">completeness-corrected baseline</text>
+  <path class="dash" d="M793 290 V309 M793 374 V393"/>
+
+  <path class="flow" d="M952 324 H988"/>
+
+  <!-- cv -->
+  <rect x="988" y="158" width="230" height="334" fill="#fbfcfc" stroke="#7f898f" stroke-width="1.3" rx="12"/>
+  <text x="1006" y="186" class="kicker" fill="#326a86">D · STAR-LEVEL CV</text>
+  <text x="1007" y="217" class="h ink">Five frozen folds</text>
+  <g class="label ink">
+    <circle cx="1031" cy="260" r="18" fill="#e3edf7" stroke="#242a2e"/><text x="1031" y="265" text-anchor="middle">0</text>
+    <circle cx="1071" cy="260" r="18" fill="#dceccf" stroke="#242a2e"/><text x="1071" y="265" text-anchor="middle">1</text>
+    <circle cx="1111" cy="260" r="18" fill="#f5e4a7" stroke="#242a2e"/><text x="1111" y="265" text-anchor="middle">2</text>
+    <circle cx="1151" cy="260" r="18" fill="#f6d0b8" stroke="#242a2e"/><text x="1151" y="265" text-anchor="middle">3</text>
+    <circle cx="1031" cy="305" r="18" fill="#f1dce4" stroke="#242a2e"/><text x="1031" y="310" text-anchor="middle">4</text>
+  </g>
+  <path class="flow" d="M1058 305 H1158"/>
+  <rect x="1033" y="343" width="144" height="61" fill="#d9eef0" class="box"/><text x="1105" y="368" text-anchor="middle" class="h ink">out-of-fold</text><text x="1105" y="389" text-anchor="middle" class="small muted">prediction only</text>
+  <text x="1007" y="437" class="mono muted">SPLIT = kepid mod 5</text><text x="1007" y="459" class="small muted">All planets around one star</text><text x="1007" y="475" class="small muted">remain in the same fold.</text>
+
+  <path class="flow" d="M1218 324 H1254"/>
+
+  <!-- deployment -->
+  <rect x="1254" y="158" width="298" height="334" fill="#fbfcfc" stroke="#7f898f" stroke-width="1.3" rx="12"/>
+  <text x="1272" y="186" class="kicker" fill="#9a2634">E · TESS DEPLOYMENT</text>
+  <rect x="1282" y="224" width="242" height="62" fill="#e3edf7" class="box"/><text x="1403" y="248" text-anchor="middle" class="h ink">Frozen stellar prior</text><text x="1403" y="269" text-anchor="middle" class="small muted">75% ordinal · 25% occurrence</text>
+  <text x="1403" y="316" text-anchor="middle" class="section muted">+</text>
+  <rect x="1282" y="338" width="242" height="77" fill="#f8f1d2" class="box"/><text x="1403" y="361" text-anchor="middle" class="h ink">Transparent opportunity</text><text x="1403" y="382" text-anchor="middle" class="small muted">sectors · span · multi-epoch</text><text x="1403" y="399" text-anchor="middle" class="small muted">detectability · known-host residual</text>
+  <path class="flow" d="M1403 415 V438"/>
+  <rect x="1327" y="440" width="152" height="37" fill="#f1dce4" class="box"/><text x="1403" y="463" text-anchor="middle" class="h" fill="#9a2634">1,000-target queue</text>
+
+  <!-- results section -->
+  <line x1="48" y1="544" x2="1552" y2="544" stroke="#20252a" stroke-width="2" stroke-dasharray="20 12"/>
+  <text x="48" y="588" class="section muted">Out-of-fold evidence and discovery routing</text>
+  <text x="1552" y="586" text-anchor="end" class="mono muted">ENRICHMENT ≠ TESS PLANET PROBABILITY</text>
+
+  <!-- auc plot -->
+  <rect x="48" y="619" width="393" height="285" fill="#fbfcfc" stroke="#7f898f" stroke-width="1.3" rx="12"/>
+  <text x="67" y="648" class="kicker" fill="#326a86">OUT-OF-FOLD DISCRIMINATION</text>
+  <g transform="translate(94 687)">
+    <line x1="0" y1="150" x2="278" y2="150" class="axis"/><line x1="0" y1="0" x2="0" y2="150" class="axis"/>
+    <line x1="0" y1="150" x2="278" y2="0" stroke="#c5cbd0" stroke-dasharray="5 5"/>
+    <path class="blue" d="M0 150 C18 92 49 57 87 37 C133 15 198 7 278 0"/>
+    <path class="green" d="M0 150 C14 80 45 44 84 26 C139 8 207 3 278 0"/>
+    <text x="139" y="176" text-anchor="middle" class="small muted">false-positive rate</text>
+    <text transform="translate(-28 76) rotate(-90)" text-anchor="middle" class="small muted">TPR</text>
+  </g>
+  <line x1="90" y1="888" x2="112" y2="888" class="blue"/><text x="120" y="892" class="small ink">ordinal AUC 0.7616</text><line x1="250" y1="888" x2="272" y2="888" class="green"/><text x="280" y="892" class="small ink">confirmed 0.7862</text>
+
+  <!-- lift plot -->
+  <rect x="471" y="619" width="447" height="285" fill="#fbfcfc" stroke="#7f898f" stroke-width="1.3" rx="12"/>
+  <text x="490" y="648" class="kicker" fill="#9a2634">TOP-DECILE HOST ENRICHMENT</text>
+  <g transform="translate(520 690)">
+    <line x1="0" y1="157" x2="350" y2="157" class="axis"/>
+    <g class="grid"><line x1="0" y1="126" x2="350" y2="126"/><line x1="0" y1="94" x2="350" y2="94"/><line x1="0" y1="63" x2="350" y2="63"/><line x1="0" y1="31" x2="350" y2="31"/></g>
+    <rect x="34" y="18" width="70" height="139" fill="#7da7c5"/><rect x="140" y="5" width="70" height="152" fill="#6fa47f"/><rect x="246" y="38" width="70" height="119" fill="#d6a76d"/>
+    <g class="h ink"><text x="69" y="8" text-anchor="middle">4.40×</text><text x="175" y="-5" text-anchor="middle">4.82×</text><text x="281" y="28" text-anchor="middle">3.77×</text></g>
+    <g class="small muted"><text x="69" y="181" text-anchor="middle">ordinal</text><text x="175" y="181" text-anchor="middle">confirmed</text><text x="281" y="181" text-anchor="middle">occurrence</text></g>
+  </g>
+
+  <!-- lanes -->
+  <rect x="948" y="619" width="604" height="285" fill="#fbfcfc" stroke="#7f898f" stroke-width="1.3" rx="12"/>
+  <text x="967" y="648" class="kicker" fill="#326a86">FROZEN DISCOVERY LANES</text>
+  <text x="969" y="678" class="h ink">Priority routing retains a blind control.</text>
+  <g transform="translate(970 711)">
+    <rect x="0" y="0" width="276" height="52" fill="#dceccf" class="box"/><text x="18" y="23" class="h ink">Quick repeat</text><text x="258" y="23" text-anchor="end" class="mono ink">500</text><text x="18" y="41" class="small muted">multi-sector repeated evidence</text>
+    <rect x="294" y="0" width="276" height="52" fill="#f5e4a7" class="box"/><text x="312" y="23" class="h ink">Known-host residual</text><text x="552" y="23" text-anchor="end" class="mono ink">250</text><text x="312" y="41" class="small muted">mask known ephemerides first</text>
+    <rect x="0" y="72" width="276" height="52" fill="#e3edf7" class="box"/><text x="18" y="95" class="h ink">Long-baseline event</text><text x="258" y="95" text-anchor="end" class="mono ink">200</text><text x="18" y="113" class="small muted">single / duo event matching</text>
+    <rect x="294" y="72" width="276" height="52" fill="#f1dce4" class="box"/><text x="312" y="95" class="h ink">Blind control</text><text x="552" y="95" text-anchor="end" class="mono ink">50</text><text x="312" y="113" class="small muted">measure real enrichment</text>
+    <rect x="0" y="142" width="570" height="12" fill="#e2e5e7" rx="6"/><rect x="0" y="142" width="285" height="12" fill="#7fae86" rx="6"/><rect x="285" y="142" width="142.5" height="12" fill="#d7b04c"/><rect x="427.5" y="142" width="114" height="12" fill="#7da7c5"/><rect x="541.5" y="142" width="28.5" height="12" fill="#c66d7b" rx="6"/>
+  </g>
+  <text x="1250" y="886" text-anchor="middle" class="mono muted">500 + 250 + 200 + 50 = 1,000 TARGETS · BLIND CONTROL RETAINED</text>
+
+  <line x1="48" y1="940" x2="1552" y2="940" stroke="#bfc6ca"/>
+  <circle cx="62" cy="959" r="6" fill="#c83243"/><text x="78" y="964" class="h ink">Interpretation</text><text x="185" y="964" class="label muted">The model orders finite compute. It cannot create a transit signal and does not report the number of planets around a star.</text>
+</svg>

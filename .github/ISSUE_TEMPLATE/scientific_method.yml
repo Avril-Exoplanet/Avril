@@ -1,0 +1,44 @@
+name: Scientific method question
+description: Discuss an invariant, failure mode, validation design, or reproducible candidate behavior.
+title: "[Science]: "
+labels: [science]
+body:
+  - type: markdown
+    attributes:
+      value: Avril candidates are not confirmed planets. Use public data and avoid novelty claims in issue titles.
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Topic
+      options:
+        - discovery grid / voting
+        - exact refit / ephemeris
+        - harmonic or alias handling
+        - event repeatability
+        - gap integrity
+        - red-noise / phase-null test
+        - physical / catalog vetting
+        - target-prior model
+        - injection / recovery design
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Question or failure mode
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Reproducible evidence
+      description: Include a public target/manifest, candidate ID, locked ephemeris, and artifact hashes when applicable.
+    validations:
+      required: true
+  - type: textarea
+    id: invariant
+    attributes:
+      label: Scientific invariant affected
+      placeholder: Candidate count, locked ephemeris, priority, gap behavior, or another explicit contract.
+    validations:
+      required: true

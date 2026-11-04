@@ -1,0 +1,36 @@
+{
+  "schema_version": "avril-v3-release-candidate-validation-v1",
+  "release_id": "avril-v3.0",
+  "validated_at": "2026-10-31",
+  "passed": true,
+  "scope": "meaningful-candidate funnel and V2 scientific-contract regression",
+  "scout_production_gate_enabled": false,
+  "real_target": {
+    "tic_id": 67630845,
+    "input_candidates": 304,
+    "candidate_count_preserved": true,
+    "locked_ephemerides_preserved": true,
+    "meaningful_candidates": 283,
+    "short_circuited_candidates": 21,
+    "disposition_counts": {
+      "known_catalog_period": 1,
+      "event_proven_known_catalog_alias": 8,
+      "event_incoherent": 12,
+      "gap_adjacent_event_dominated": 0,
+      "meaningful_unexplained_candidate": 283
+    },
+    "event_metrics_reused": 292,
+    "event_metrics_recomputed": 0,
+    "fallback_scientific_decision_differences": 0,
+    "high_priority_follow_up_candidates": 3,
+    "fallback_funnel_wall_seconds": 5.009,
+    "native_funnel_wall_seconds": 0.154,
+    "fallback_finalization_wall_seconds": 15.036,
+    "native_finalization_wall_seconds": 7.941
+  },
+  "limitations": [
+    "The target-level Scout skip gate remains disabled until blind recall calibration.",
+    "A high-priority row is a follow-up candidate, not a confirmed planet.",
+    "This real target contained no strict gap-dominated candidate; gap routing is covered by synthetic tests."
+  ]
+}

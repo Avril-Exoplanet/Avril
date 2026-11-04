@@ -1,0 +1,5 @@
+-r base.txt
+build>=1.2,<2
+pytest>=8.3,<10
+ruff>=0.8,<1
+wheel>=0.44

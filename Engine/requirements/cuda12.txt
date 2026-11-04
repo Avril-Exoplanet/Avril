@@ -1,0 +1,3 @@
+-r base.txt
+cupy-cuda12x>=13.4,<14
+pycuda>=2025.1,<2027

@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use Avril in research, cite this software release and the upstream TESS data products."
+title: "Avril: Evidence-preserving cross-platform transit-candidate search"
+type: software
+version: 3.0.0
+date-released: 2026-10-30
+authors:
+  - name: "Avril contributors"
+license: Apache-2.0
+repository-code: "https://github.com/ShutongLiang/Avril"
+keywords:
+  - TESS
+  - exoplanet transit
+  - Box Least Squares
+  - CUDA

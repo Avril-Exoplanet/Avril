@@ -1,0 +1,16 @@
+* text=auto eol=lf
+
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.pdf binary
+*.xcframework binary
+*.zip binary
+*.fits binary
+*.fits.gz binary
+
+*.sh text eol=lf
+*.py text eol=lf
+*.swift text eol=lf
+*.md text eol=lf
+*.svg text eol=lf

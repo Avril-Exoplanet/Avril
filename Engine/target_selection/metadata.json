@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "catalog_id": "tess_discovery_queue_v02",
+  "title": "Avril TESS discovery target queue v0.2",
+  "catalog": {
+    "rows": 1000,
+    "unique_tic_ids": 1000,
+    "created_utc": "2026-10-29T09:43:51.673094+00:00",
+    "maximum_public_sector_at_build": 107,
+    "recent_sector_start": 56,
+    "model_applicability": "All 1,000 bundled targets were in the frozen stellar-model training domain."
+  },
+  "interpretation": {
+    "kind": "ranking_prior",
+    "is_planet_probability": false,
+    "is_detection_or_confirmation": false,
+    "plain_language": "These scores choose which stars are worth searching first. They are not the probability that a star has a planet and are not evidence of a transit.",
+    "catalog_count_prior": "The ordinal outputs estimate yield in a frozen, high-reliability Kepler DR25 catalog under explicit period, radius, S/N and transit-count cuts. They are lower-bound catalog-yield priors, not the unknown true number of planets.",
+    "gap_score": "The gap and lane scores combine the frozen stellar prior with transparent opportunity features such as TESS coverage, revisit baseline, detectability proxies and known-system status. They are ranking heuristics, not calibrated probabilities.",
+    "required_next_step": "A target becomes scientifically interesting only after Avril finds repeatable light-curve evidence and it passes catalog deduplication, pixel localization, neighbour checks and physical vetting."
+  },
+  "training_provenance": {
+    "source": "NASA Exoplanet Archive",
+    "survey_release": "Kepler Q1-Q17 DR25",
+    "retrieved_utc": "2026-10-29T06:51:24.887534+00:00",
+    "stellar_table": "q1_q17_dr25_ks",
+    "stellar_rows_downloaded": 200038,
+    "stellar_rows_eligible": 102209,
+    "stellar_sha256": "f6729a17e38791ca8a1f2ddc4c3c619421ca136ffe556b9c6c56f917464de17a",
+    "koi_table": "q1_q17_dr25_koi",
+    "koi_rows_downloaded": 8054,
+    "koi_sha256": "3a44de4e87177141022d6f8c38f41ddfdd8c4e3784acac0c78fd6957fd23ff1b",
+    "stellar_features": [
+      "teff",
+      "logg",
+      "feh",
+      "mass",
+      "radius",
+      "J-K"
+    ],
+    "excluded_from_stellar_prior": [
+      "KOI count",
+      "TCE count",
+      "known planet count",
+      "brightness",
+      "Kepler noise",
+      "observing duration"
+    ],
+    "label_definition": {
+      "period_days": [
+        0.5,
+        40.0
+      ],
+      "planet_radius_earth": [
+        0.5,
+        16.0
+      ],
+      "minimum_robovetter_score": 0.9,
+      "minimum_model_snr": 10.0,
+      "minimum_transits": 3,
+      "pipeline_disposition": "CANDIDATE",
+      "all_false_positive_flags_zero": true
+    },
+    "model_profiles": {
+      "frozen_candidate": "Default ordinal catalog-yield prior trained on the frozen high-reliability DR25 candidate definition.",
+      "confirmed_clean": "More conservative ordinal lower-bound profile that additionally requires the DR25 archive disposition CONFIRMED.",
+      "occurrence_grid": "Completeness-corrected period-radius occurrence-grid baseline using stellar CDPP, MES thresholds, data span, duty cycle, transit geometry and the DR25 injection-recovery curve."
+    },
+    "development_rank_blend": {
+      "ordinal_weight": 0.75,
+      "occurrence_weight": 0.25,
+      "top_decile_lift": 4.5714481146676595,
+      "status": "Development choice from out-of-fold Kepler predictions; it is not a fresh TESS blind-test result."
+    },
+    "validation": {
+      "split": "Five-fold star-level cross-validation using kepid modulo 5; all planets around one star stay in one fold.",
+      "frozen_candidate": {
+        "roc_auc": 0.7615823965758008,
+        "average_precision": 0.06808306233246884,
+        "top_decile_lift": 4.403873037150516
+      },
+      "confirmed_clean": {
+        "roc_auc": 0.7862420536884228,
+        "average_precision": 0.06419088710927337,
+        "top_decile_lift": 4.818906176331919
+      },
+      "occurrence_grid": {
+        "top_decile_lift": 3.7670877425853737,
+        "note": "Completeness-corrected period-radius occurrence-grid baseline."
+      }
+    }
+  },
+  "discovery_lanes": {
+    "quick_repeat": {
+      "rows": 500,
+      "purpose": "Prioritize targets where repeated evidence should be relatively quick to obtain.",
+      "recipe": "Run the standard multi-detrending search, BLS and TLS; retain every independent event and prefer signals repeated across sectors or years."
+    },
+    "known_host_residual": {
+      "rows": 250,
+      "purpose": "Search residual light curves of systems already known to host planets.",
+      "recipe": "Fit and mask every known ephemeris first; then run BLS, TLS and event-first searches on the residual light curve, retaining more than the highest peak."
+    },
+    "long_baseline_event": {
+      "rows": 200,
+      "purpose": "Look for long-period single- and double-transit events across mission eras.",
+      "recipe": "Search sector-by-sector for individual transit-like events; match depth and duration across epochs, enumerate period aliases, and reject aliases with missing predicted events."
+    },
+    "blind_control": {
+      "rows": 50,
+      "purpose": "Retain an exploration/control arm for measuring real enrichment without self-confirming the ranking.",
+      "recipe": "Run the same full standard search without using the framework score when interpreting the result; keep this arm for an unbiased yield comparison."
+    }
+  },
+  "assets": {
+    "tess_discovery_queue_v02.csv": "a0b7583acf7473d46bd81fae64d603fc6e1d9a3fbe702418de907c6f9e46c04d",
+    "frozen_candidate_model.json": "1220cf9c75448e73aa169bdd3e00cfdff2212071ee6916569946727501ec12be",
+    "confirmed_clean_model.json": "2b84404ac4058829a546bd3b803b93884a32ff8a2a2fc7e9645baf239b64af44",
+    "occurrence_grid_model.json": "42cd8e7a096fea63d9c283005072bc5c0fa3d663ba8f720bd1838e36687bb9ad"
+  },
+  "scientific_caveats": [
+    "Kepler-to-TESS target selection, bandpass, baseline and noise differences create domain shift.",
+    "TESS detectability in this pre-download queue is an approximation; it is not an injection-recovery calibration of Avril.",
+    "The occurrence grid does not yet reproduce clustered multi-planet architectures or conditional coplanarity.",
+    "Known-record counts and sector coverage are frozen to the queue build snapshot and can become stale.",
+    "The blind-control lane must remain in yield comparisons."
+  ]
+}

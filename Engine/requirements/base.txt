@@ -1,0 +1,9 @@
+numpy>=2.0,<2.4
+scipy>=1.13,<2
+astropy>=7.0,<8.0
+matplotlib>=3.9,<4
+pandas>=2.2,<3
+lightkurve==2.6.0
+astroquery>=0.4.9,<0.5
+numba>=0.62,<0.63
+exovetter==0.0.16

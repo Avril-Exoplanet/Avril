@@ -1,0 +1,57 @@
+name: Bug report
+description: Report a reproducible engine, interface, or export defect.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not attach unpublished FITS data, credentials, personal paths, or private candidates.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - macOS workstation
+        - data acquisition
+        - transit search
+        - vetting / ranking
+        - target-prior queue
+        - pixel follow-up
+        - report / export
+        - build / packaging
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Avril version or commit
+      placeholder: 3.0.0 or commit SHA
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction
+      description: Use a public target or a minimal synthetic example.
+      placeholder: Commands, target identifier, source mode, backend, and exact steps.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: macOS/Linux/Windows version, CPU/GPU, Python, source mode, sector count.
+    validations:
+      required: true

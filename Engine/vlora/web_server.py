@@ -59,7 +59,7 @@ DEFAULT_ALLOWED_ORIGINS = frozenset(
         "http://127.0.0.1:4173",
         "http://localhost:4173",
         "https://vlora-orbit-lab.pages.dev",
-        "https://shutongliang.github.io",
+        "https://avril-exoplanet.github.io",
     }
 )
 

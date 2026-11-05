@@ -78,7 +78,7 @@ Avril V3 当前以研究预览版发布。仓库包含原生 macOS 科学工作�
 ### 安装和启动
 
 ```bash
-git clone https://github.com/ShutongLiang/Avril.git
+git clone https://github.com/Avril-Exoplanet/Avril.git
 cd avril
 
 # 建立本地科学计算环境，并安装可选 TLS 搜索通道。

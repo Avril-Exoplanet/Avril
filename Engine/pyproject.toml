@@ -52,8 +52,8 @@ dev = [
 avril = "avril.cli:main"
 
 [project.urls]
-Documentation = "https://github.com/ShutongLiang/Avril#readme"
-Issues = "https://github.com/ShutongLiang/Avril/issues"
+Documentation = "https://github.com/Avril-Exoplanet/Avril#readme"
+Issues = "https://github.com/Avril-Exoplanet/Avril/issues"
 
 [tool.setuptools]
 py-modules = [

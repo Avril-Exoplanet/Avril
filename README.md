@@ -201,7 +201,7 @@ Requirements:
 - internet access only when downloading public TESS products.
 
 ```bash
-git clone https://github.com/ShutongLiang/Avril.git
+git clone https://github.com/Avril-Exoplanet/Avril.git
 cd avril
 
 # Create the local Python science environment.
@@ -271,7 +271,7 @@ Avril is licensed under [Apache License 2.0](LICENSE). If Avril contributes to r
   author  = {{Avril contributors}},
   year    = {2026},
   version = {3.0.0},
-  url     = {https://github.com/ShutongLiang/Avril}
+  url     = {https://github.com/Avril-Exoplanet/Avril}
 }
 ```
 

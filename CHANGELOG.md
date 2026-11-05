@@ -36,4 +36,4 @@ scientific contract permits it.
 - Population-level completeness and false-positive calibration remain future
   work and require sealed TIC-disjoint evaluation plus injection/recovery.
 
-[Unreleased]: https://github.com/ShutongLiang/Avril/compare/HEAD...HEAD
+[Unreleased]: https://github.com/Avril-Exoplanet/Avril/compare/HEAD...HEAD

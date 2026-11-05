@@ -7,7 +7,7 @@ date-released: 2026-10-30
 authors:
   - name: "Avril contributors"
 license: Apache-2.0
-repository-code: "https://github.com/ShutongLiang/Avril"
+repository-code: "https://github.com/Avril-Exoplanet/Avril"
 keywords:
   - TESS
   - exoplanet transit

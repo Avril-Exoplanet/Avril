@@ -3,7 +3,7 @@ set -euo pipefail
 
 PROJECT_ROOT="${0:A:h:h}"
 BUILD_ROOT="${AVRIL_NOVA_BUILD_ROOT:-$PROJECT_ROOT/.build/avril-nova-app}"
-APP="$BUILD_ROOT/Avril Nova.app"
+APP="$BUILD_ROOT/Avril Exoplanet Workstation.app"
 PYTHON="${AVRIL_NOVA_PYTHON:-$PROJECT_ROOT/.venv/bin/python}"
 
 if [[ ! -x "$APP/Contents/MacOS/AvrilNova" ]]; then

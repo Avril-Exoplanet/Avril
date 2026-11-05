@@ -26,7 +26,7 @@ struct RootView: View {
         }
         .background(NovaTheme.canvas)
         .foregroundStyle(NovaTheme.ink)
-        .alert("Avril Nova", isPresented: Binding(
+        .alert("Avril Exoplanet Workstation", isPresented: Binding(
             get: { model.errorBanner != nil },
             set: { if !$0 { model.errorBanner = nil } }
         )) {
@@ -60,7 +60,7 @@ private struct TopBar: View {
                 }
                 .frame(width: 28, height: 28)
                 VStack(alignment: .leading, spacing: 0) {
-                    Text("AVRIL NOVA")
+                    Text("AVRIL")
                         .font(.nova(size: 12, weight: .bold))
                         .tracking(1.05)
                         .foregroundStyle(NovaTheme.ink)

@@ -17,7 +17,7 @@ else
   fi
 fi
 SCRATCH_ROOT="$BUILD_ROOT/swift-build"
-APP="$BUILD_ROOT/Avril Nova.app"
+APP="$BUILD_ROOT/Avril Exoplanet Workstation.app"
 CONTENTS="$APP/Contents"
 RESOURCES="$CONTENTS/Resources"
 ALGORITHM_SOURCE="$PROJECT_ROOT/Engine"

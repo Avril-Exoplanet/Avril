@@ -6,8 +6,8 @@
     <key>CFBundleExecutable</key><string>AvrilNova</string>
     <key>CFBundleIdentifier</key><string>org.avril.exoplanet.nova</string>
     <key>CFBundleInfoDictionaryVersion</key><string>6.0</string>
-    <key>CFBundleName</key><string>Avril Nova</string>
-    <key>CFBundleDisplayName</key><string>Avril Nova</string>
+    <key>CFBundleName</key><string>Avril Exoplanet Workstation</string>
+    <key>CFBundleDisplayName</key><string>Avril Exoplanet Workstation</string>
     <key>CFBundleIconFile</key><string>AvrilNova.icns</string>
     <key>CFBundlePackageType</key><string>APPL</string>
     <key>CFBundleShortVersionString</key><string>0.2.0</string>

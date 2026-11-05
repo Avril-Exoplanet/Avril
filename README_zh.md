@@ -1,4 +1,4 @@
-# Avril
+# Avril Exoplanet Workstation
 
 ## 面向所有人的新行星发现系统
 

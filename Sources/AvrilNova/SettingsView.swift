@@ -35,7 +35,7 @@ struct SettingsView: View {
                     }
                 }
                 settingPanel(model.t("Data", "数据"), symbol: "internaldrive") {
-                    Text(model.t("Science products are stored in ~/Library/Application Support/Avril Nova. Removing the app does not silently delete downloaded NASA products or audit records.", "科学数据保存在 ~/Library/Application Support/Avril Nova。删除应用不会悄然删除已下载的 NASA 数据或审计记录。"))
+                    Text(model.t("Science products are stored in the local Application Support directory. Removing the app does not silently delete downloaded NASA products or audit records.", "科学数据保存在本地 Application Support 目录中。删除应用不会悄然删除已下载的 NASA 数据或审计记录。"))
                         .font(.nova(size: 11))
                         .foregroundStyle(NovaTheme.inkSecondary)
                         .fixedSize(horizontal: false, vertical: true)

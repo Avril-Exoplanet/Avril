@@ -1,6 +1,8 @@
-# Avril
+# Avril Exoplanet Workstation
 
-**Exoplanet Discovery for Everyone**
+**AI-Guided Exoplanet Candidate Discovery System**
+
+*Exoplanet discovery for everyone.*
 
 [![Status: Research Preview](https://img.shields.io/badge/status-research_preview-c93646)](docs/SCIENTIFIC_CONTRACT.md)
 [![Native macOS](https://img.shields.io/badge/macOS-15%2B-17394d?logo=apple&logoColor=white)](Package.swift)
